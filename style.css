@@ -26,7 +26,7 @@ body {
     z-index: 1000;
 }
 
-/* Este contenedor asegura que el ancho coincida exactamente con los 1200px del Hero */
+
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -147,7 +147,53 @@ body {
 @media screen and (max-width: 768px) {
     .header-container { padding: 16px; }
     .header-right .btn-secondary { display: none; }
+    .btn-primary { display: none; }
 }
+
+/* ==========================================================================
+   ESTILOS DE ÍCONOS MÓVILES (Ocultos por defecto en pantallas grandes)
+   ========================================================================== */
+.mobile-icon-btn {
+    display: none; /* Oculto en computadoras */
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 6.4px;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.mobile-icon-btn:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   COMPORTAMIENTO RESPONSIVO DEL HEADER (Pantallas <= 900px)
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+    /* 1. Ocultar el menú de navegación completo de la izquierda */
+    .nav-links {
+        display: none !important; 
+    }
+
+    /* 2. Ocultar los botones de texto de la derecha en móvil */
+    .desktop-only {
+        display: none !important; 
+    }
+
+    /* 3. Hacer visibles únicamente los íconos de Lupa y Menú en móvil */
+    .mobile-icon-btn {
+        display: inline-flex !important; 
+    }
+
+    /* Reducir espacio en el header para pantallas estrechas */
+    .header-container {
+        padding: 13.6px 20px;
+    }
+}
+
 
 /* ==========================================================================
    SECCIÓN HERO PRINCIPAL 
